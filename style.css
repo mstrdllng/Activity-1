@@ -1,0 +1,256 @@
+  /* Reset default margin and padding for all elements */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base styles for the body */
+body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    background: linear-gradient(to bottom, #000000, #ff4500); /* Gradient from black to orange */
+}
+
+/* Intro overlay styles */
+.intro-overlay {
+    position: fixed; /* Fixed position to cover the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    color: white;
+    display: flex; /* Flexbox layout to center content */
+    justify-content: center;
+    align-items: center;
+    z-index: 2000; /* Higher z-index to cover the main content */
+    opacity: 1; /* Fully visible initially */
+    transition: opacity 0.5s ease; /* Smooth fade-out effect */
+}
+
+.intro-overlay.hidden {
+    opacity: 0; /* Hidden state for fade-out effect */
+    pointer-events: none; /* Disable interaction when hidden */
+}
+
+.intro-content {
+    text-align: center; /* Center text in the intro overlay */
+}
+
+.intro-content h1 {
+    font-size: 36px; /* Large font size for intro heading */
+    margin-bottom: 20px;
+}
+
+.intro-content p {
+    font-size: 18px; /* Font size for intro paragraph */
+    margin-bottom: 30px;
+}
+
+.intro-content button {
+    padding: 12px 24px; /* Padding for the button */
+    font-size: 16px; /* Font size for button text */
+    color: white;
+    background-color: rgba(255, 127, 80, 0.9); /* Button background color */
+    border: none;
+    cursor: pointer;
+    border-radius: 8px; /* Rounded button corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* 3D effect with shadow */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.intro-content button:hover {
+    background-color: rgba(255, 99, 71, 0.8); /* Hover color for the button */
+    transform: scale(1.1); /* Scale up the button for 3D effect */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Increased shadow for 3D effect */
+}
+
+/* Styles for the navbar container */
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8); /* Dark background for navbar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    padding: 10px 20px; /* Padding for spacing */
+    position: relative;
+    z-index: 1000; /* Keeps navbar on top of other elements */
+}
+
+/* Logo styles */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px; /* Adjust logo height */
+    width: auto;
+}
+
+/* Title styles in the navbar */
+.title {
+    color: white;
+    font-size: 24px; /* Font size for the title */
+    font-weight: bold;
+    flex: 1; /* Allows title to grow and take available space */
+    text-align: center; /* Center align the title */
+}
+
+/* Hamburger menu styles (hidden by default) */
+.hamburger {
+    display: none; /* Hidden on larger screens */
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1100; /* Ensure hamburger icon is above navbar items */
+}
+
+.hamburger span {
+    height: 3px;
+    width: 25px;
+    background: white;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    transition: 0.3s; /* Smooth transition for animations */
+}
+
+/* Navbar styles */
+.navbar {
+    list-style-type: none;
+    max-width: 800px;
+    width: 100%;
+    display: flex; /* Flexbox layout for horizontal alignment */
+    justify-content: center; /* Center navbar items */
+    align-items: center;
+    padding: 0;
+    transition: display 0.3s ease; /* Smooth transition for showing/hiding navbar */
+}
+
+.navbar li {
+    position: relative; /* For dropdown positioning */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none; /* Remove underline */
+    padding: 10px 20px; /* Padding for clickable area */
+    display: block;
+    transition: background-color 0.3s, transform 0.3s; /* Smooth hover effect */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* 3D effect with shadow */
+}
+
+.navbar a:hover {
+    background-color: rgba(255, 99, 71, 0.8); /* Hover background color */
+    transform: scale(1.05); /* Scale up for 3D effect */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Increased shadow for 3D effect */
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Position below the parent */
+    left: 0;
+    background: rgba(0, 0, 0, 0.8); /* Dark background for dropdown */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 200px; /* Fixed width for dropdown */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Shadow for dropdown */
+}
+
+.dropdown-menu li {
+    width: 100%; /* Full width for dropdown items */
+}
+
+.dropdown-menu a {
+    padding: 10px; /* Padding for clickable area */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth hover effect */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* 3D effect with shadow */
+}
+
+.dropdown-menu a:hover {
+    background-color: rgba(255, 99, 71, 0.8); /* Hover background color */
+    transform: scale(1.05); /* Scale up for 3D effect */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Increased shadow for 3D effect */
+}
+
+/* Show dropdown on hover */
+.services-item:hover .dropdown-menu {
+    display: block; /* Display dropdown on hover */
+}
+
+/* Video background styling */
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures video covers the entire background */
+    z-index: -1; /* Places video behind all other content */
+}
+
+/* Hidden sections for About and Contact */
+.hidden-section {
+    display: none;
+    padding: 20px;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Responsive styles for mobile view */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex; /* Show hamburger on small screens */
+    }
+
+    .navbar {
+        flex-direction: column; /* Vertical layout for navbar */
+        align-items: center;
+        display: none; /* Hide navbar by default */
+        position: absolute;
+        top: 100%; /* Position below the hamburger */
+        left: 0;
+        width: 100%; /* Full width for mobile */
+        background: rgba(0, 0, 0, 0.8); /* Same background as navbar */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Shadow for mobile menu */
+        transition: display 0.3s ease; /* Smooth transition */
+    }
+
+    .navbar.active {
+        display: flex; /* Show navbar when active */
+    }
+
+    .dropdown-menu {
+        position: static; /* Static position for dropdown */
+        width: 100%; /* Full width on mobile */
+    }
+
+    .navbar a {
+        width: 100%; /* Full width for navbar links */
+        text-align: center; /* Center align text */
+    }
+
+    .logo {
+        margin-right: auto; /* Keep the logo on the left */
+    }
+}
+
+/* Responsive styles for larger screens */
+@media (min-width: 769px) {
+    .navbar-container {
+        justify-content: center; /* Center content in the navbar-container */
+    }
+
+    .title {
+        text-align: center; /* Center align the title */
+    }
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navigation Bar</title>
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <!-- Video background -->
+    <video class="background-video" autoplay loop muted playsinline>
+        <source src="c:\Users\Mary Darling Ramos\OneDrive\Desktop\GRADWAITINGGGGG\MAAM JIA\cyberpunk-gaming-pixel-moewalls-com.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Intro overlay -->
+    <div class="intro-overlay">
+        <div class="intro-content">
+            <h1>Welcome to Our Website!</h1>
+            <p>Discover amazing things and enjoy your stay.</p>
+            <button id="intro-btn">Enter</button>
+        </div>
+    </div>
+
+    <div class="navbar-container">
+        <!-- Logo inside the navbar-container -->
+        <div class="logo">
+            <a href="#">
+                <img src="c:\Users\Mary Darling Ramos\OneDrive\Desktop\GRADWAITINGGGGG\MAAM JIA\th.jpg" alt="Mouri Logo">
+            </a>
+        </div>
+        <!-- Title in the header -->
+        <div class="title">Code today, haunt tomorrow</div>
+        <!-- Hamburger menu icon for mobile -->
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <!-- Navigation bar -->
+        <ul class="navbar">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about" id="about-btn">About</a></li>
+            <!-- Services item with dropdown -->
+            <li class="services-item"><a href="#services">Services</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#webdev">Web Development</a></li>
+                    <li><a href="#mobiledev">Mobile App Development</a></li>
+                    <li><a href="#uidesign">UI/UX Design</a></li>
+                </ul>
+            </li>
+            <li><a href="#contact" id="contact-btn">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Sections for About and Contact -->
+    <div class="hidden-section" id="about-section">
+        <h2>About Us</h2>
+        <p>Here is some information about our website and what we do.</p>
+        <p>We offer a range of services to help you with your web and mobile development needs.</p>
+    </div>
+
+    <div class="hidden-section" id="contact-section">
+        <h2>Contact Us</h2>
+        <p>Get in touch with us via the following channels:</p>
+        <p>Email: contact@ourwebsite.com</p>
+        <p>Phone: (123) 456-7890</p>
+    </div>
+
+    <script src="home.js"></script>
+</body>
+</html>
+
+
+
+<!--- Here's a brief explanation of the CSS and JavaScript code in your HTML, describing their purpose based on the comments:
+
+### CSS Explanation
+
+1. **Reset and Base Styles**
+   - `*`: Resets default margin, padding, and sets `box-sizing` to `border-box` for all elements to ensure consistent sizing.
+   - `body`: Applies a sans-serif font, prevents horizontal scroll, and sets a full-page background image with specific properties to ensure it covers the entire viewport.
+
+2. **Navbar Styles**
+   - `.navbar-container`: Creates a flex container for the navigation bar, aligns items, applies background and shadow for visual depth, and ensures it stays above other elements.
+   - `.logo` and `.logo img`: Styles the logo within the navbar, setting its size and alignment.
+   - `.title`: Styles the title text within the navbar, centering it and setting font properties.
+   - `.hamburger`: Styles the hamburger menu icon for mobile view, setting it to be hidden by default on larger screens.
+   - `.navbar`: Defines styles for the navigation list, setting it as a flex container for horizontal alignment and centering.
+   - `.navbar li` and `.navbar a`: Styles individual navbar items and links, including hover effects.
+   - `.dropdown-menu` and `.dropdown-menu a`: Styles the dropdown menu under "Services," initially hiding it and setting properties for positioning and hover effects.
+
+3. **Responsive Styles**
+   - `@media (max-width: 768px)`: Applies styles for mobile view, making the navbar vertical, hiding it by default, and showing the hamburger icon.
+   - `@media (min-width: 769px)`: Centers the content in the navbar container for larger screens.
+
+### JavaScript Explanation
+
+1. **Dropdown Menu Interaction**
+   - `servicesItem.addEventListener('mouseover', function() {...})`: Shows the dropdown menu when the user hovers over the "Services" item in the navbar.
+   - `servicesItem.addEventListener('mouseout', function() {...})`: Hides the dropdown menu when the mouse moves away from the "Services" item.
+
+2. **Hamburger Menu Interaction**
+   - `hamburger.addEventListener('click', function() {...})`: Toggles the visibility of the navbar when the hamburger icon is clicked, useful for mobile view.
+
+3. **Responsive Behavior**
+   - `window.addEventListener('resize', function() {...})`: Ensures the navbar is displayed properly when the window is resized above 768px width, resetting the display style and removing the `active` class to maintain layout consistency.  --->
+
+
+
+
+   
